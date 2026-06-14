@@ -1,0 +1,324 @@
+:root {
+    --primary-green: #1E5128;
+    --tech-blue: #0A84FF;
+    --bg-light: #F4F6F8;
+    --text-dark: #191A19;
+    --text-muted: #4E545C;
+    --white: #FFFFFF;
+    --border-radius: 16px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --base-font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: var(--base-font-size);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 5vw, 3rem);
+}
+
+/* Acessibilidade Toolbar */
+.accessibility-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: var(--primary-green);
+    z-index: 1000;
+    padding: 0.5rem 1rem;
+    border-bottom-left-radius: var(--border-radius);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.accessibility-bar button {
+    background: var(--white);
+    border: none;
+    color: var(--primary-green);
+    padding: 0.25rem 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.accessibility-bar button:hover {
+    transform: scale(1.05);
+}
+
+/* Header */
+.main-header {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    padding: 1.2rem 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 5vw, 3rem);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--tech-blue);
+}
+
+.nav-menu {
+    display: flex;
+    gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--tech-blue);
+}
+
+/* Hero Section */
+.hero-section {
+    padding-top: calc(100px + clamp(4rem, 10vw, 8rem));
+    padding-bottom: clamp(4rem, 10vw, 8rem);
+    background: linear-gradient(135deg, #eef5f0 0%, #e6eff7 100%);
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    color: var(--primary-green);
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    margin-top: 2rem;
+}
+
+.highlight-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+    text-align: left;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+}
+
+.highlight-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.highlight-card h3 {
+    margin-bottom: 0.75rem;
+    color: var(--primary-green);
+    font-size: 1.3rem;
+}
+
+/* Nossa Tecnologia Section */
+.tech-section {
+    padding: clamp(4rem, 10vw, 8rem) 0;
+    background: var(--white);
+}
+
+.tech-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 4rem;
+    align-items: center;
+}
+
+.tech-text h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--primary-green);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+}
+
+.tech-text p {
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+}
+
+.tech-image-placeholder {
+    background: linear-gradient(135deg, var(--primary-green), var(--tech-blue));
+    border-radius: var(--border-radius);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: var(--white);
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+/* Tendências Section (Carrossel) */
+.trends-section {
+    padding: clamp(4rem, 10vw, 8rem) 0;
+    background: var(--bg-light);
+}
+
+.trends-section h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    text-align: center;
+    color: var(--primary-green);
+}
+
+.section-desc {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+}
+
+.carousel-wrapper {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    min-width: 300px;
+    flex: 1 1 calc(33.333% - 1.5rem);
+    scroll-snap-align: start;
+}
+
+.carousel-card .tag {
+    background: rgba(10, 132, 255, 0.1);
+    color: var(--tech-blue);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.carousel-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+/* FAQ Acordeão */
+.faq-section {
+    padding-bottom: clamp(4rem, 10vw, 8rem);
+    background: var(--bg-light);
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-green);
+}
+
+.accordion-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.accordion-item {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.5rem;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 1.5rem;
+    color: var(--text-muted);
+}
+
+/* Conecte-se Section */
+.contact-section {
+    padding: clamp(4rem, 10vw, 8rem) 0;
+    background: var(--white);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 4rem;
+}
+
+.contact-info h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--primary-green);
+    margin-bottom: 1.5rem
